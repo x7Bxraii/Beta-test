@@ -220,3 +220,6 @@ Section:NewToggle("fram Player", "No.1", function(state)
     end
 end)
 
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightCtrl, function()
+	Library:ToggleUI()
+end)
