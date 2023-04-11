@@ -7,6 +7,7 @@ Section:NewToggle("Auto Fram", "ZETTO HUB", function(state)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/x7Bxraii/SaveMode/main/README.md"))()
 end)
 
+
 local Weaponlist = {}
 local Weapon = nil
 
