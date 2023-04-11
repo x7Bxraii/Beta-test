@@ -7,12 +7,14 @@ Section:NewToggle("Auto Fram", "ZETTO HUB", function(state)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/x7Bxraii/SaveMode/main/README.md"))()
 end)
 
+
 local Weaponlist = {}
 local Weapon = nil
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
     table.insert(Weaponlist,v.Name)
 end
+
 
 Section:NewToggle("Auto Equip", "ZETTO HUB NO.1", function(a)
     AutoEquiped = a
@@ -28,7 +30,8 @@ Section:NewToggle("Auto Equip", "ZETTO HUB NO.1", function(a)
     end    
 end)
 
-Section:NewDropdown("select weapon", "Enjoy:)", Weaponlist, function(currentOption)
+
+Section:NewDropdown("select weapon", "FUCK YOU", Weaponlist, function(currentOption)
     Weapon = currentOption
 end)
 
@@ -37,19 +40,14 @@ local Tab = Window:NewTab("Status")
 local Section = Tab:NewSection("Status player")
 
 Section:NewToggle("Auto stats", "menu stats", function(state)
-    _G.AddPoint = state;
-    while _G.AddPoint do wait()
-    local args = {
-        [1] = "AddPoint",
-        [2] = "Melee",
-        [3] = 1,
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer(unpack(args))
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
     end
 end)
-Section:NewDropdown("Stats", "BRUH", {"melee"}, function(currentOption)
-
+Section:NewDropdown("Stats", "BRUH", {"melee", "defense", "Sword", "Gun", "Blox fruit"}, function(currentOption)
+    print(currentOption)
 end)
 
 local Tab = Window:NewTab("Raid")
@@ -228,3 +226,4 @@ end)
 Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.L, function()
 	Library:ToggleUI()
 end)
+
