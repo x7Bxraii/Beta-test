@@ -15,6 +15,7 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
     table.insert(Weaponlist,v.Name)
 end
 
+
 Section:NewToggle("Auto Equip", "ZETTO HUB NO.1", function(a)
     AutoEquiped = a
     end)
